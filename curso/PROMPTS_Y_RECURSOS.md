@@ -3,6 +3,40 @@
 
 ---
 
+## 🧠 0. Prompts para Inyección de Skills y Análisis Inverso de URLs
+
+### Prompt 0.1: Análisis Inverso y Deconstrucción de una Web de Referencia
+```text
+Actúa como un Arquitecto Frontend y Diseñador UI/UX Senior.
+Accede a esta URL de referencia: [PEGAR_URL_DE_REFERENCIA]
+
+Realiza una auditoría visual e inspección profunda del código y entrégame:
+1. Arquitectura de Secciones: Lista en orden cronológico cada bloque de la landing (Hero, Bento Grid, Trackers, etc.).
+2. Paleta Cromática Exacta: Extrae los códigos hexadecimales del fondo, superficies, textos, bordes y colores de acento.
+3. Tipografía & Pesos: Identifica las fuentes de titulares y cuerpo de texto.
+4. Componentes y Efectos Visuales: Describe cómo están construidas las tarjetas (glassmorphism, blur, gradientes, bordes sutiles) y las micro-animaciones presentes.
+5. Manual de Identidad Visual: Consolida toda esta información en un archivo Markdown estructurado para que podamos replicar el estándar sin perder calidad.
+```
+
+### Prompt 0.2: Creación del Skill de Marca (`estilo-marca`)
+```text
+Crea un Skill para el agente de IA dentro de la carpeta ".agents/skills/estilo-marca/".
+Debe contener:
+1. SKILL.md: Instrucciones obligatorias donde se declare la marca "A\DAN SOLUT\ONS", su lema "Del caos operativo al piloto automático" y la regla de no improvisar colores ni tipografías.
+2. recursos/estilo-visual.json: Tokens estructurados con la paleta Dark Tech (Fondo #0B0F19, Acento #00D2FF, Secundario #0051FF, Verde #10B981) y reglas para botones y tarjetas.
+3. recursos/guia-de-textos.md: Tono de voz técnico, directo, orientado a beneficios y sin relleno corporativo.
+```
+
+### Prompt 0.3: Regla de Preservación de Diseño (Refactor Asistido)
+```text
+Vamos a transformar la web anterior hacia la nueva identidad de A\DAN SOLUT\ONS.
+REGLA INVIOLABLE:
+NO realices cambios al diseño base ni a las clases del sistema CSS.
+Solo vamos a editar la información: titulares, copies, números de métricas, casos de éxito e integraciones externas. El layout visual, espaciados y animaciones deben permanecer intactos.
+```
+
+---
+
 ## 🤖 1. Prompts de Copywriting & Estructura de Marca
 
 ### Prompt 1: Generación de Propuesta de Valor y Hero Copy (Dark Tech)

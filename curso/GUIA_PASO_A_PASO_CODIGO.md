@@ -4,20 +4,83 @@
 ---
 
 ## 📌 ÍNDICE DE IMPLEMENTACIÓN
-1. [Fase 1: Setup y Configuración del Entorno](#fase-1-setup-y-configuración-del-entorno)
-2. [Fase 2: El Sistema de Diseño CSS (Dark Tech & Tokens)](#fase-2-el-sistema-de-diseño-css-dark-tech--tokens)
-3. [Fase 3: Integración de la Escena 3D Spline en Pantalla Completa](#fase-3-integración-de-la-escena-3d-spline-en-pantalla-completa)
-4. [Fase 4: Desarrollo de la Lógica Interactiva (Vanilla JS)](#fase-4-desarrollo-de-la-lógica-interactiva-vanilla-js)
-5. [Fase 5: Pipeline Vectorial de Marca (Logo SVG & Favicon)](#fase-5-pipeline-vectorial-de-marca-logo-svg--favicon)
-6. [Fase 6: Embudos de Conversión (Cal.com + WhatsApp API)](#fase-6-embudos-de-conversión-calcom--whatsapp-api)
-7. [Fase 7: Despliegue CI/CD en GitHub y Netlify](#fase-7-despliegue-cicd-en-github-y-netlify)
+1. [Fase 1: Inyección y Configuración de Skills en el Agente de IA](#fase-1-inyección-y-configuración-de-skills-en-el-agente-de-ia)
+2. [Fase 2: Análisis Inverso y Deconstrucción de la Web de Referencia](#fase-2-análisis-inverso-y-deconstrucción-de-la-web-de-referencia)
+3. [Fase 3: Setup y Configuración del Entorno Ultrarrápido](#fase-3-setup-y-configuración-del-entorno-ultrarrápido)
+4. [Fase 4: El Sistema de Diseño CSS (Dark Tech & Tokens)](#fase-4-el-sistema-de-diseño-css-dark-tech--tokens)
+5. [Fase 5: Integración de la Escena 3D Spline en Pantalla Completa](#fase-5-integración-de-la-escena-3d-spline-en-pantalla-completa)
+6. [Fase 6: Desarrollo de la Lógica Interactiva (Vanilla JS)](#fase-6-desarrollo-de-la-lógica-interactiva-vanilla-js)
+7. [Fase 7: Pipeline Vectorial de Marca (Logo SVG & Favicon)](#fase-7-pipeline-vectorial-de-marca-logo-svg--favicon)
+8. [Fase 8: Embudos de Conversión (Cal.com + WhatsApp API)](#fase-8-embudos-de-conversión-calcom--whatsapp-api)
+9. [Fase 9: Despliegue CI/CD en GitHub y Netlify](#fase-9-despliegue-cicd-en-github-y-netlify)
 
 ---
 
-## Fase 1: Setup y Configuración del Entorno
+## Fase 1: Inyección y Configuración de Skills en el Agente de IA
+
+### 1. ¿Por qué usamos Skills en el Asistente?
+Sin un contexto estructurado, los modelos de IA tienden a "olvidar" las restricciones entre prompts, mezclar estilos o usar librerías incompatibles. Las **Skills** son carpetas de conocimiento normativo que se inyectan en el espacio de trabajo dentro de `.agents/skills/`.
+
+### 2. Estructura del Skill `estilo-marca`
+Creamos `.agents/skills/estilo-marca/SKILL.md` con su frontmatter y recursos asociados:
+```yaml
+---
+name: estilo-marca
+description: Estándar de marca para A\DAN SOLUT\ONS. Úsalo siempre que generes interfaz, landing, componentes, copies o cualquier contenido visible.
+---
+# Skill: Estilo y Marca
+Marca: A\DAN SOLUT\ONS
+Lema: "Del caos operativo al piloto automático."
+
+## Regla número 1
+No improvises el estilo. Si falta un dato, usa los valores definidos en recursos/estilo-visual.json.
+```
+
+### 3. El Archivo de Tokens `recursos/estilo-visual.json`
+Aquí blindamos los colores, tipografías y radios de borde:
+```json
+{
+  "marca": "A\\DAN SOLUT\\ONS",
+  "paleta": {
+    "fondo": "#0B0F19",
+    "superficie": "#161D2F",
+    "acento": "#00D2FF",
+    "acento_secundario": "#0051FF"
+  },
+  "tipografia": {
+    "titulares": "Space Grotesk, sans-serif",
+    "cuerpo": "Inter, sans-serif"
+  }
+}
+```
+
+---
+
+## Fase 2: Análisis Inverso y Deconstrucción de la Web de Referencia
+
+### 1. Cómo alimentar la URL de referencia al Agente
+Le compartimos al agente el enlace de la web de referencia (o la web inicial) con una instrucción precisa de auditoría:
+> *"Analiza esta web de referencia. Examina su DOM, jerarquía de secciones, clases CSS, paleta de colores, componentes de tarjetas, efectos de iluminación y microinteracciones. Genera un manual de identidad visual con todas sus especificaciones técnicas."*
+
+### 2. Deconstrucción del DOM y Componentes
+El agente ejecuta una inspección estructural y documenta:
+1. **El Hero**: Contenedor de ancho y alto completo con escena 3D y overlay inferior.
+2. **Las Tarjetas**: Estilo Bento grid con fondo oscuro `#161D2F` y bordes sutiles.
+3. **El Tracker**: Timeline horizontal de 5 pasos con barra de progreso continua.
+4. **El Carrusel**: Comportamiento 3D con efecto de cartas apiladas (Coverflow).
+
+El resultado se consolida en un documento duradero: `MANUAL_IDENTIDAD_VISUAL_SOLUCIONES_DIGITALES.md`.
+
+### 3. La Regla de Preservación de Diseño
+Para evolucionar la web sin romperla, se instruye a la IA con una restricción innegociable:
+> *"NO realices cambios al diseño ni al CSS base, solo vamos a editar la información, los textos y los assets hacia la nueva marca A\DAN SOLUT\ONS."*
+
+---
+
+## Fase 3: Setup y Configuración del Entorno Ultrarrápido
 
 ### 1. Inicialización con Vite
-Creamos un proyecto ligero sin la complejidad de frameworks:
+Creamos un proyecto ligero sin la sobrecarga de frameworks como React o Next.js:
 ```bash
 npm init -y
 npm install -D vite lucide
@@ -49,10 +112,9 @@ npm install -D vite lucide
 
 ---
 
-## Fase 2: El Sistema de Diseño CSS (Dark Tech & Tokens)
+## Fase 4: El Sistema de Diseño CSS (Dark Tech & Tokens)
 
 ### 1. Variables de Marca (`:root`)
-Definimos los tokens de color Dark Tech para garantizar consistencia:
 ```css
 :root {
   --bg-black: #0B0F19;
@@ -68,7 +130,6 @@ Definimos los tokens de color Dark Tech para garantizar consistencia:
 ```
 
 ### 2. Glassmorphism y Bordes Tecnológicos
-Para que las tarjetas parezcan páneles de control flotantes:
 ```css
 .card-glass {
   background: rgba(22, 29, 47, 0.7);
@@ -89,7 +150,7 @@ Para que las tarjetas parezcan páneles de control flotantes:
 
 ---
 
-## Fase 3: Integración de la Escena 3D Spline en Pantalla Completa
+## Fase 5: Integración de la Escena 3D Spline en Pantalla Completa
 
 ### 1. Precarga en el `<head>` para evitar pantallas en blanco
 ```html
@@ -148,7 +209,7 @@ function initSplineViewerClean() {
 
 ---
 
-## Fase 4: Desarrollo de la Lógica Interactiva (Vanilla JS)
+## Fase 6: Desarrollo de la Lógica Interactiva (Vanilla JS)
 
 ### 1. Efecto Máquina de Escribir (Typewriter)
 ```javascript
@@ -163,11 +224,8 @@ function initTypewriter() {
     const currentWord = words[wordIndex];
     target.textContent = currentWord.substring(0, charIndex);
 
-    if (isDeleting) {
-      charIndex--;
-    } else {
-      charIndex++;
-    }
+    if (isDeleting) charIndex--;
+    else charIndex++;
 
     let delay = isDeleting ? 90 : 140;
 
@@ -225,7 +283,7 @@ function initMetricsCounter() {
 
 ---
 
-## Fase 5: Pipeline Vectorial de Marca (Logo SVG & Favicon)
+## Fase 7: Pipeline Vectorial de Marca (Logo SVG & Favicon)
 
 ### El Secreto de los Logotipos en SVG
 Cuando un SVG se incrusta mediante `<img src="logo.svg">`, los navegadores aíslan el documento y **bloquean fuentes externas**. Por ello, vectorizamos la tipografía *Space Grotesk* en coordenadas puras `<path d="...">`:
@@ -251,7 +309,7 @@ Cuando un SVG se incrusta mediante `<img src="logo.svg">`, los navegadores aísl
 
 ---
 
-## Fase 6: Embudos de Conversión (Cal.com + WhatsApp API)
+## Fase 8: Embudos de Conversión (Cal.com + WhatsApp API)
 
 ### 1. Botón Flotante Fijo con Anillo Neón Pulsante
 ```html
@@ -278,7 +336,7 @@ Cuando un SVG se incrusta mediante `<img src="logo.svg">`, los navegadores aísl
 
 ---
 
-## Fase 7: Despliegue CI/CD en GitHub y Netlify
+## Fase 9: Despliegue CI/CD en GitHub y Netlify
 
 ### 1. `netlify.toml` para Automatización Total
 ```toml
@@ -307,5 +365,5 @@ git commit -m "feat: Lanzamiento oficial landing page A\DAN SOLUT\ONS"
 git remote add origin https://github.com/TU_USUARIO/TU_REPOSITORIO.git
 git push -u origin main
 ```
-Luego, en [Netlify](https://app.netlify.com):
+Luego en [Netlify](https://app.netlify.com):
 **"Add new site" → "Import from GitHub" → Seleccionar repositorio → Deploy.**
