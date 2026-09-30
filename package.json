@@ -1,0 +1,17 @@
+{
+  "name": "aidan-solutions-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host --port 5173",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "lucide": "^0.469.0",
+    "opentype.js": "^2.0.0",
+    "pngjs": "^7.0.0",
+    "vite": "^5.4.11"
+  }
+}

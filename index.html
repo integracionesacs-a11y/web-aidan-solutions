@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A\DAN SOLUT\ONS | Software a Medida, IA & Automatización</title>
+  <meta name="description" content="Digitaliza tu negocio para vender más, ahorrar tiempo y tener el control con desarrollo de software a medida, automatización y agentes de IA." />
+  <link rel="icon" type="image/svg+xml" href="/assets/adan_favicon.svg" />
+  <link rel="icon" type="image/png" href="/assets/adan_favicon.png" />
+
+  <!-- Google Fonts: Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons CDN for immediate icon rendering -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Spline 3D Web Component & Preload -->
+  <link rel="preload" href="https://prod.spline.design/XJypBQwOG98yOOnb/scene.splinecode" as="fetch" crossorigin>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
+
+  <!-- Cal.com embed loader -->
+  <script type="text/javascript">
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal; let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {}; cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", { origin: "https://cal.com" });
+  </script>
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo" aria-label="A\DAN SOLUT\ONS">
+        <img src="/assets/adan_solutions_logo.svg" alt="A\DAN SOLUT\ONS Logo" />
+      </a>
+
+      <nav class="nav-links">
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#metodo" class="nav-link">Método de Trabajo</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#casos-de-exito" class="nav-link">Casos de Éxito</a>
+        <a href="#testimonios" class="nav-link">Testimonios</a>
+      </nav>
+
+      <div class="nav-cta-wrap">
+        <button class="btn-nav-cta open-cal-modal">
+          <span>Conversemos</span>
+          <i data-lucide="calendar" style="width: 18px; height: 18px;"></i>
+        </button>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menú">
+        <i data-lucide="menu" id="menuIcon" style="width: 28px; height: 28px;"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#servicios" class="nav-link mobile-link">Servicios</a>
+    <a href="#metodo" class="nav-link mobile-link">Método de Trabajo</a>
+    <a href="#nosotros" class="nav-link mobile-link">Nosotros</a>
+    <a href="#casos-de-exito" class="nav-link mobile-link">Casos de Éxito</a>
+    <a href="#testimonios" class="nav-link mobile-link">Testimonios</a>
+    <button class="btn-primary open-cal-modal" style="width: 100%; justify-content: center; margin-top: 0.5rem;">
+      <span>Conversemos</span>
+      <i data-lucide="calendar" style="width: 18px; height: 18px;"></i>
+    </button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-spline-wrapper">
+      <spline-viewer
+        id="heroSpline"
+        url="https://prod.spline.design/XJypBQwOG98yOOnb/scene.splinecode"
+        events-target="global"
+        loading-anim-type="none">
+      </spline-viewer>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Soluciones Diseñadas Para
+        <br />
+        <span class="hero-typewriter-container">
+          <span id="typewriter" class="text-gradient"></span><span class="cursor-blink">|</span>
+        </span>
+      </h1>
+      <div class="hero-buttons">
+        <a href="#casos-de-exito" class="btn-primary">
+          <span>Explorar Casos de Éxito</span>
+          <i data-lucide="arrow-right" style="width: 20px; height: 20px;"></i>
+        </a>
+        <button class="btn-secondary open-cal-modal">
+          <span>Conversemos</span>
+          <i data-lucide="calendar" style="width: 20px; height: 20px;"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Section -->
+  <section class="services-section" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge-pill">Nuestros Servicios</div>
+        <h2 class="section-title">Todo Lo Que Tu Negocio Necesita Para Digitalizarse</h2>
+        <p class="section-desc">
+          Convertimos tus ideas en sistemas y software seguro, diseñado para agilizar tus operaciones y generar resultados reales en tu negocio.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Servicio 1 -->
+        <div class="service-card">
+          <img src="/assets/web_&_app_development.webp" alt="Desarrollo Web & App" class="service-card-bg" />
+          <div class="service-card-overlay"></div>
+          <div class="service-card-content">
+            <div>
+              <div class="service-icon-box">
+                <i data-lucide="layout" style="width: 28px; height: 28px;"></i>
+              </div>
+              <h3 class="service-card-title">Desarrollo Web & App</h3>
+              <p class="service-card-desc">
+                Plataformas web y aplicaciones móviles de última generación que combinan diseño excepcional con funcionalidades avanzadas a medida.
+              </p>
+            </div>
+            <div class="service-progress-line"></div>
+          </div>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="service-card">
+          <img src="/assets/rpa.webp" alt="Automatizaciones RPA" class="service-card-bg" />
+          <div class="service-card-overlay"></div>
+          <div class="service-card-content">
+            <div>
+              <div class="service-icon-box">
+                <i data-lucide="cpu" style="width: 28px; height: 28px;"></i>
+              </div>
+              <h3 class="service-card-title">Automatizaciones RPA</h3>
+              <p class="service-card-desc">
+                Robots de software que ejecutan tareas repetitivas con precisión perfecta, liberando a los equipos humanos para el trabajo estratégico de alto valor.
+              </p>
+            </div>
+            <div class="service-progress-line"></div>
+          </div>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="service-card">
+          <img src="/assets/chatbots.webp" alt="Chatbots & Asistentes Virtuales" class="service-card-bg" />
+          <div class="service-card-overlay"></div>
+          <div class="service-card-content">
+            <div>
+              <div class="service-icon-box">
+                <i data-lucide="message-square" style="width: 28px; height: 28px;"></i>
+              </div>
+              <h3 class="service-card-title">Chatbots & Asistentes</h3>
+              <p class="service-card-desc">
+                Asistentes multimodales que gestionan la atención omnicanal las 24/7 en WhatsApp, Telegram, Messenger, Instagram y portales corporativos.
+              </p>
+            </div>
+            <div class="service-progress-line"></div>
+          </div>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="service-card">
+          <img src="/assets/ai_agents.webp" alt="Infraestructura & Agentes de IA" class="service-card-bg" />
+          <div class="service-card-overlay"></div>
+          <div class="service-card-content">
+            <div>
+              <div class="service-icon-box">
+                <i data-lucide="sparkles" style="width: 28px; height: 28px;"></i>
+              </div>
+              <h3 class="service-card-title">Agentes de Inteligencia Artificial</h3>
+              <p class="service-card-desc">
+                Sistemas cognitivos que toman decisiones complejas, procesan lenguaje natural, integran bases de conocimiento y ejecutan flujos de trabajo autónomos.
+              </p>
+            </div>
+            <div class="service-progress-line"></div>
+          </div>
+        </div>
+
+        <!-- Servicio 5 -->
+        <div class="service-card">
+          <img src="/assets/business_intelligence.webp" alt="Business Intelligence & Data Analytics" class="service-card-bg" />
+          <div class="service-card-overlay"></div>
+          <div class="service-card-content">
+            <div>
+              <div class="service-icon-box">
+                <i data-lucide="bar-chart-3" style="width: 28px; height: 28px;"></i>
+              </div>
+              <h3 class="service-card-title">BI & Data Analytics</h3>
+              <p class="service-card-desc">
+                Sistemas que analizan grandes volúmenes de datos para generar reportes visuales en tiempo real, predicciones y optimización de costes operacionales.
+              </p>
+            </div>
+            <div class="service-progress-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metodología Section -->
+  <section class="method-section" id="metodo">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge-pill">Cómo Trabajamos</div>
+        <h2 class="section-title">Cómo Construimos Tus Soluciones</h2>
+        <p class="section-desc">
+          Creamos sistemas seguros y a tu medida usando tecnología moderna y métodos ágiles, asegurando entregas rápidas, cero complicaciones y resultados medibles desde el primer día.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-wrap">
+            <i data-lucide="box" style="width: 32px; height: 32px; color: var(--text-light-primary);"></i>
+          </div>
+          <h3 class="pillar-title">Desarrollo a Medida</h3>
+          <p class="pillar-desc">
+            Código propio y arquitectura personalizada para tu negocio. Cero programas genéricos ni funciones innecesarias: solo lo que realmente necesitas para operar.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-wrap">
+            <i data-lucide="shield-check" style="width: 32px; height: 32px; color: var(--text-light-primary);"></i>
+          </div>
+          <h3 class="pillar-title">Tecnología Segura y Probada</h3>
+          <p class="pillar-desc">
+            Usamos bases técnicas y herramientas estándar de la industria, garantizando que tu sistema sea rápido, proteja tus datos y nunca se cuelgue.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-wrap">
+            <i data-lucide="network" style="width: 32px; height: 32px; color: var(--text-light-primary);"></i>
+          </div>
+          <h3 class="pillar-title">Infraestructura en la Nube y Modelos IA</h3>
+          <p class="pillar-desc">
+            Conectamos tu plataforma con los servidores e inteligencias artificiales líderes a nivel global, asegurando que tu negocio funcione 24/7 sin caídas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Animated Progress Tracker Box -->
+      <div class="adaptation-box">
+        <div class="adaptation-header">
+          <div>
+            <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-light-primary); margin-bottom: 0.25rem;">
+              El Paso a Paso de Tu Proyecto
+            </h3>
+            <p style="font-size: 0.95rem; color: var(--text-light-secondary);">
+              Avanzamos contigo etapa por etapa para asegurarnos de que la herramienta resuelva tus necesidades operativas reales.
+            </p>
+          </div>
+          <div class="adaptation-badge">
+            <i data-lucide="settings" style="width: 20px; height: 20px;"></i>
+            <span>Proceso Ágil y Transparente</span>
+          </div>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-bar-fill" id="stageProgress"></div>
+        </div>
+
+        <div class="stages-track">
+          <div class="stage-item active" data-stage="0">
+            <div class="stage-dot">1</div>
+            <span class="stage-label">Diagnóstico</span>
+          </div>
+          <div class="stage-item" data-stage="1">
+            <div class="stage-dot">2</div>
+            <span class="stage-label">Diseño y Plan</span>
+          </div>
+          <div class="stage-item" data-stage="2">
+            <div class="stage-dot">3</div>
+            <span class="stage-label">Desarrollo</span>
+          </div>
+          <div class="stage-item" data-stage="3">
+            <div class="stage-dot">4</div>
+            <span class="stage-label">Pruebas de Control</span>
+          </div>
+          <div class="stage-item" data-stage="4">
+            <div class="stage-dot">5</div>
+            <span class="stage-label">Puesta en Marcha</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casos de Éxito Section -->
+  <section class="cases-section" id="casos-de-exito">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge-pill">Casos de Éxito</div>
+        <h2 class="section-title" style="color: var(--text-white);">Nuestros Clientes y Resultados Hablan Por Nosotros</h2>
+        <p class="section-desc">
+          Creamos tecnología estratégica para empresas líderes en telecomunicaciones e infraestructura en Perú.
+        </p>
+      </div>
+
+      <!-- Infinite Logo Carousel -->
+      <div class="logos-carousel-wrap">
+        <div class="logos-track">
+          <!-- Duplicated for continuous loop -->
+          <div class="logo-item"><img src="/assets/Logos Website-Win.png" alt="Win" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-UC.png" alt="Universidad Continental" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-SUNAT.png" alt="SUNAT" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-COPEINCA.png" alt="Copeinca" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Compartamos.png" alt="Compartamos Banco" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Tecnofarma.png" alt="Tecnofarma" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-SAT.png" alt="SAT" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Banco Azteca.png" alt="Banco Azteca" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-UCMX.png" alt="UCMX" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Win Empresas.png" alt="Win Empresas" /></div>
+          <!-- Loop duplicate -->
+          <div class="logo-item"><img src="/assets/Logos Website-Win.png" alt="Win" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-UC.png" alt="Universidad Continental" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-SUNAT.png" alt="SUNAT" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-COPEINCA.png" alt="Copeinca" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Compartamos.png" alt="Compartamos Banco" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Tecnofarma.png" alt="Tecnofarma" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-SAT.png" alt="SAT" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Banco Azteca.png" alt="Banco Azteca" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-UCMX.png" alt="UCMX" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Win Empresas.png" alt="Win Empresas" /></div>
+        </div>
+      </div>
+
+      <!-- 3D Coverflow Carousel -->
+      <div class="coverflow-carousel" id="coverflowCarousel">
+        <button class="carousel-nav-btn prev" id="carouselPrev" aria-label="Caso anterior">
+          <i data-lucide="chevron-left" style="width: 24px; height: 24px;"></i>
+        </button>
+        <button class="carousel-nav-btn next" id="carouselNext" aria-label="Siguiente caso">
+          <i data-lucide="chevron-right" style="width: 24px; height: 24px;"></i>
+        </button>
+
+        <div class="coverflow-stage" id="coverflowStage">
+          <!-- Card 1 -->
+          <div class="case-card" data-index="0">
+            <div class="case-img-wrap">
+              <img src="/assets/uc_image.webp" alt="ENTEL" />
+              <div class="case-img-overlay"></div>
+              <div class="case-brand-tag">
+                <h4>ENTEL</h4>
+                <div class="brand-line"></div>
+              </div>
+            </div>
+            <div class="case-content">
+              <h3 class="case-title">Modernización Operativa de Red sin Interrupciones</h3>
+              <p class="case-desc">
+                Migramos y automatizamos procesos críticos en la red de transporte de telecomunicaciones. Garantizamos ejecución de alta precisión con disponibilidad 24/7 y cero minutos de corte en la operación continua.
+              </p>
+              <div class="case-tags">
+                <span class="case-tag">Infraestructura Crítica</span>
+                <span class="case-tag">Red de Transporte</span>
+                <span class="case-tag">Cero Caídas</span>
+              </div>
+              <a href="#contacto" class="case-link">
+                <span>Ver detalles del caso</span>
+                <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="case-card" data-index="1">
+            <div class="case-img-wrap">
+              <img src="/assets/sunat_image.webp" alt="WIN" />
+              <div class="case-img-overlay"></div>
+              <div class="case-brand-tag">
+                <h4>WIN</h4>
+                <div class="brand-line"></div>
+              </div>
+            </div>
+            <div class="case-content">
+              <h3 class="case-title">Integración Automática Comercial e Ingeniería</h3>
+              <p class="case-desc">
+                Conectamos los flujos de datos entre ventas y despliegue técnico de fibra óptica. Redujimos en un 80% los tiempos muertos y el registro manual, acelerando las instalaciones y altas de servicio.
+              </p>
+              <div class="case-tags">
+                <span class="case-tag">Fibra Óptica</span>
+                <span class="case-tag">Automatización de Flujos</span>
+                <span class="case-tag">Eficiencia Operativa</span>
+              </div>
+              <a href="#contacto" class="case-link">
+                <span>Ver detalles del caso</span>
+                <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="case-card" data-index="2">
+            <div class="case-img-wrap">
+              <img src="/assets/copeinca_image.webp" alt="LPS PERÚ" />
+              <div class="case-img-overlay"></div>
+              <div class="case-brand-tag">
+                <h4>LPS PERÚ</h4>
+                <div class="brand-line"></div>
+              </div>
+            </div>
+            <div class="case-content">
+              <h3 class="case-title">Gestión Digital de Obras y Logística en Tiempo Real</h3>
+              <p class="case-desc">
+                Desarrollamos una plataforma centralizada para coordinar almacén, cuadrillas de campo y avance de obra. Eliminamos el papel y optimizamos la entrega de materiales para despliegues de telecomunicaciones.
+              </p>
+              <div class="case-tags">
+                <span class="case-tag">Construcción y Redes</span>
+                <span class="case-tag">Logística Digital</span>
+                <span class="case-tag">Gestión en Campo</span>
+              </div>
+              <a href="#contacto" class="case-link">
+                <span>Ver detalles del caso</span>
+                <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="case-card" data-index="3">
+            <div class="case-img-wrap">
+              <img src="/assets/win_image.webp" alt="Operadores de Conectividad & ISP" />
+              <div class="case-img-overlay"></div>
+              <div class="case-brand-tag">
+                <h4>Operadores & ISP</h4>
+                <div class="brand-line"></div>
+              </div>
+            </div>
+            <div class="case-content">
+              <h3 class="case-title">Monitoreo y Despacho Automatizado de Enlaces</h3>
+              <p class="case-desc">
+                Implementamos sistemas inteligentes de asignación de rutas y control de incidencias técnicas. Agilizamos el soporte en campo y maximizamos la respuesta ante caídas de enlace troncal.
+              </p>
+              <div class="case-tags">
+                <span class="case-tag">Telecomunicaciones</span>
+                <span class="case-tag">Monitoreo en Tiempo Real</span>
+                <span class="case-tag">Software a Medida</span>
+              </div>
+              <a href="#contacto" class="case-link">
+                <span>Ver detalles del caso</span>
+                <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros & Metrics Section -->
+  <section class="about-section" id="nosotros">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge-pill">Sobre Nosotros</div>
+        <h2 class="section-title">Experiencia Técnica y Resultados Que Respaldan Tu Inversión</h2>
+        <p class="section-desc">
+          Combinamos ingeniería de software sénior, automatización de procesos y arquitecturas cloud para que tu empresa opere con máxima velocidad, seguridad y sin interrupciones.
+        </p>
+      </div>
+
+      <!-- Metrics Counter Grid -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon-wrap">
+            <i data-lucide="users" style="width: 28px; height: 28px;"></i>
+          </div>
+          <div class="metric-number text-indicator-gradient" data-target="15" data-prefix="+">+0</div>
+          <p class="metric-label">empresas líderes que confían en nuestras soluciones de software y automatización</p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon-wrap">
+            <i data-lucide="briefcase" style="width: 28px; height: 28px;"></i>
+          </div>
+          <div class="metric-number text-indicator-gradient" data-target="120" data-prefix="+">+0</div>
+          <p class="metric-label">procesos operativos y despliegues críticos ejecutados con éxito</p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon-wrap">
+            <i data-lucide="award" style="width: 28px; height: 28px;"></i>
+          </div>
+          <div class="metric-number text-indicator-gradient" data-target="8" data-prefix="+">+0</div>
+          <p class="metric-label">años de experiencia técnica diseñando arquitectura e integración de sistemas</p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon-wrap">
+            <i data-lucide="shield-check" style="width: 28px; height: 28px;"></i>
+          </div>
+          <div class="metric-number text-indicator-gradient" data-target="99" data-suffix="%">0%</div>
+          <p class="metric-label">disponibilidad y continuidad operativa en plataformas de misión crítica</p>
+        </div>
+      </div>
+
+      <!-- Team Showcase Card -->
+      <div class="team-showcase">
+        <div class="team-avatar-group">
+          <img src="/assets/rafael.png" alt="Equipo A\DAN" class="team-avatar" title="Equipo A\DAN" />
+          <img src="/assets/juan.webp" alt="Consultor Técnico" class="team-avatar" title="Consultor Técnico" />
+          <img src="/assets/benigno.webp" alt="Arquitecto de Software" class="team-avatar" title="Arquitecto de Software" />
+          <img src="/assets/benny.webp" alt="Especialista en IA" class="team-avatar" title="Especialista en IA" />
+        </div>
+        <h3 class="team-heading">¿Listo Para Llevar Tu Operación Al Siguiente Nivel?</h3>
+        <p class="team-desc">
+          Analizamos tus cuellos de botella operativos, diseñamos la solución técnica adecuada y desplegamos herramientas que eliminan el trabajo manual y aceleran tus resultados.
+        </p>
+        <button class="btn-primary open-cal-modal">
+          <span>Agendar Diagnóstico Técnico Gratuito</span>
+          <i data-lucide="calendar" style="width: 20px; height: 20px;"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios Section -->
+  <section class="testimonials-section" id="testimonios">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge-pill">Testimonios</div>
+        <h2 class="section-title">Lo Que Dicen Quienes Ya Trabajan Con Nosotros</h2>
+        <p class="section-desc">
+          Casos reales de continuidad operativa, automatización y control en el sector telecomunicaciones.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="star-rating">
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+          </div>
+          <p class="testimonial-quote">
+            "Su capacidad técnica nos permitió modernizar procesos operativos críticos de la red sin detener el servicio ni un solo minuto. Ejecutaron cada fase con precisión milimétrica y cero impacto en la operación diaria."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar-initials">EN</div>
+            <div>
+              <div class="author-name">Coordinación de Red de Transporte</div>
+              <div class="author-role">ENTEL | Infraestructura & Telecomunicaciones</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="star-rating">
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+          </div>
+          <p class="testimonial-quote">
+            "Lograron conectar y automatizar el traspaso de información entre el área Comercial e Ingeniería, reduciendo en un 80% los tiempos de espera y el trabajo manual. Hoy atendemos y desplegamos mucho más rápido."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar-initials">WN</div>
+            <div>
+              <div class="author-name">Gerencia de Operaciones</div>
+              <div class="author-role">WIN | Telecomunicaciones & Fibra Óptica</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="star-rating">
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+            <i data-lucide="star" style="width: 20px; height: 20px; fill: #FBBF24;"></i>
+          </div>
+          <p class="testimonial-quote">
+            "La plataforma que desarrollaron unificó a los equipos de Logística y Construcción en tiempo real. Ahora gestionamos materiales, cuadrillas y avances de obra sin papeleos, demoras ni caídas del sistema."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar-initials">LP</div>
+            <div>
+              <div class="author-name">Jefatura de Logística y Despliegue</div>
+              <div class="author-role">LPS PERÚ | Obras de Telecomunicaciones</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto Section & Spline 3D Scene -->
+  <section class="contact-section" id="contacto">
+    <div class="container">
+      <div class="contact-card-3d">
+        <!-- Interactive 3D Spline Earth Canvas -->
+        <div class="spline-embed-container">
+          <iframe
+            src="https://my.spline.design/worldplanet-THcRYGslYxNkr3g7RdqRgH9h/"
+            frameborder="0"
+            title="Interactive 3D Planet"
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <div class="contact-content">
+          <div class="badge-pill" style="margin-bottom: 1.25rem;">Contacto Directo</div>
+          <h2 class="contact-title">Iniciemos La Digitalización De Tu Empresa</h2>
+          <p class="contact-desc">
+            Cuéntanos los desafíos operativos de tu negocio. Evaluaremos tus procesos y diseñaremos la solución tecnológica exacta para acelerar tu crecimiento.
+          </p>
+          <div class="contact-cta-group">
+            <button class="btn-contact-glow open-cal-modal">
+              <span>Agendar Sesión de Diagnóstico</span>
+              <i data-lucide="calendar" style="width: 20px; height: 20px;"></i>
+            </button>
+            <a href="https://wa.me/51985332135?text=Hola%20AIDAN%20SOLUTIONS,%20vengo%20de%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-contact-whatsapp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.886-9.884 9.886m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+              <span>Escríbeme un mensaje</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cal.com Modal Window -->
+  <div class="modal-overlay" id="calModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Reservar Diagnóstico Estratégico con A\DAN SOLUT\ONS</h3>
+        <button class="modal-close" id="modalClose" aria-label="Cerrar modal">
+          <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe
+          src="https://cal.com/danny-camavilca-aidan-solutions/diagnostico?embed=true&theme=dark"
+          title="Agendar Cita en Cal.com"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <a href="#hero" class="nav-logo" aria-label="A\DAN SOLUT\ONS">
+        <img src="/assets/adan_solutions_logo.svg" alt="A\DAN SOLUT\ONS" style="height: 40px;" />
+      </a>
+
+      <div class="footer-copyright">
+        © 2026 A\DAN SOLUT\ONS. Todos los derechos reservados.
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/dannycamavilca" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+          <i data-lucide="linkedin" style="width: 22px; height: 22px;"></i>
+        </a>
+        <a href="https://www.tiktok.com/@dan1el.reload" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64c.298 0 .586.046.86.13V9.42a6.33 6.33 0 00-.86-.06 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.75a8.18 8.18 0 004.77 1.52V6.82a4.85 4.85 0 01-1-.13z"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/51985332135?text=Hola%20AIDAN%20SOLUTIONS,%20vengo%20de%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.886-9.884 9.886m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/51985332135?text=Hola%20AIDAN%20SOLUTIONS,%20vengo%20de%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-whatsapp" 
+     aria-label="Conversemos por WhatsApp">
+    <span class="floating-whatsapp-text">Conversemos</span>
+    <div class="floating-whatsapp-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.886-9.884 9.886m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+    </div>
+  </a>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

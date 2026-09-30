@@ -1,0 +1,71 @@
+{
+  "marca": "A\\DAN SOLUT\\ONS",
+  "lema": "Del caos operativo al piloto automático.",
+  "objetivo": "Mantener consistencia visual en UI, landings y componentes.",
+  "paleta": {
+    "principal": "#0B0F19",
+    "secundario": "#FFFFFF",
+    "acento": "#00D2FF",
+    "acento_secundario": "#0051FF",
+    "fondo": "#0B0F19",
+    "superficie": "#161D2F",
+    "texto": {
+      "principal": "#FFFFFF",
+      "secundario": "#94A3B8",
+      "acento": "#00D2FF"
+    },
+    "bordes": "#232D42"
+  },
+  "tipografia": {
+    "titulares": "Space Grotesk, Montserrat, sans-serif",
+    "cuerpo": "Inter, sans-serif",
+    "codigo_acento": "JetBrains Mono, monospace",
+    "pesos": {
+      "normal": 400,
+      "medio": 500,
+      "semi_negrita": 600,
+      "negrita": 700,
+      "extra_negrita": 800
+    }
+  },
+  "formas": {
+    "radio_tarjeta": "24px",
+    "radio_boton": "12px",
+    "radio_input": "12px"
+  },
+  "espaciado": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "12px",
+    "lg": "16px",
+    "xl": "24px",
+    "xxl": "32px"
+  },
+  "simbolo": {
+    "isotipo": "Erizo geométrico low-poly",
+    "significado": "Velocidad de procesamiento, precisión algorítmica y blindaje de datos empresariales",
+    "inclinacion": "Coincidente con la barra invertida técnica '\\' en A\\DAN SOLUT\\ONS"
+  },
+  "componentes": {
+    "boton_principal": {
+      "fondo": "#00D2FF",
+      "gradiente": "linear-gradient(to right, #0051FF, #00D2FF)",
+      "texto": "#0B0F19",
+      "glow": "0 0 20px -2px rgba(0, 210, 255, 0.45)",
+      "cta": "Corto, directo y orientado a beneficio"
+    },
+    "boton_secundario": {
+      "fondo": "transparent",
+      "borde": "1px solid #00D2FF",
+      "texto": "#FFFFFF",
+      "hover": "rgba(0, 210, 255, 0.1) con resplandor exterior"
+    },
+    "tarjetas": {
+      "fondo": "#161D2F",
+      "borde": "1px solid #232D42",
+      "glassmorphism": "backdrop-filter: blur(16px)",
+      "tilt": "Iluminación en esquinas con tilt 3D sutil"
+    },
+    "layout": "Grid limpio Dark Tech, respiración amplia, sin saturación, priorizar claridad"
+  }
+}
