@@ -10,7 +10,7 @@
 
   <link rel="stylesheet" href="./style.css" />
   <link rel="preload" href="https://prod.spline.design/XJypBQwOG98yOOnb/scene.splinecode" as="fetch" crossorigin />
-  <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
+  <script type="module" src="https://cdn.spline.design/@splinetool/viewer/build/spline-viewer.js"></script>
 </head>
 <body>
 
@@ -61,8 +61,8 @@
       <spline-viewer
         id="heroSpline"
         url="https://prod.spline.design/XJypBQwOG98yOOnb/scene.splinecode"
-        events-target="global"
-        loading-anim-type="spinner-small-dark">
+        loading="eager"
+        events-target="global">
       </spline-viewer>
       <div class="hero-overlay"></div>
     </div>

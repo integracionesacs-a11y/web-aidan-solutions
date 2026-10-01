@@ -115,10 +115,21 @@ function initSplineViewerClean(heroSpline) {
     } catch (_) {}
   }
 
+  heroSpline.addEventListener('load-complete', () => {
+    removeLogo();
+    try {
+      if (heroSpline.spline) {
+        heroSpline.spline.emitEvent?.('start');
+        heroSpline.spline.requestRender?.();
+      }
+    } catch (_) {}
+  });
+
   heroSpline.addEventListener('load', removeLogo);
   removeLogo();
   setTimeout(removeLogo, 200);
   setTimeout(removeLogo, 600);
+  setTimeout(removeLogo, 1500);
 }
 
 /* -------------------------------------------------------------
