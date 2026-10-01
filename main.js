@@ -96,11 +96,7 @@ function initSplineViewer() {
   const heroSpline = document.getElementById('heroSpline');
   if (!heroSpline) return;
 
-  import('@splinetool/viewer').then(() => {
-    initSplineViewerClean(heroSpline);
-  }).catch((err) => {
-    console.warn('Spline viewer deferred load notice:', err);
-  });
+  initSplineViewerClean(heroSpline);
 }
 
 function initSplineViewerClean(heroSpline) {
