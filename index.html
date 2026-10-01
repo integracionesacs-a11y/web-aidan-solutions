@@ -8,43 +8,6 @@
   <link rel="icon" type="image/svg+xml" href="/assets/adan_favicon.svg" />
   <link rel="icon" type="image/png" href="/assets/adan_favicon.png" />
 
-  <!-- Google Fonts: Space Grotesk -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons CDN for immediate icon rendering -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Spline 3D Web Component & Preload -->
-  <link rel="preload" href="https://prod.spline.design/XJypBQwOG98yOOnb/scene.splinecode" as="fetch" crossorigin>
-  <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
-
-  <!-- Cal.com embed loader -->
-  <script type="text/javascript">
-    (function (C, A, L) {
-      let p = function (a, ar) { a.q.push(ar); };
-      let d = C.document;
-      C.Cal = C.Cal || function () {
-        let cal = C.Cal; let ar = arguments;
-        if (!cal.loaded) {
-          cal.ns = {}; cal.q = cal.q || [];
-          d.head.appendChild(d.createElement("script")).src = A;
-          cal.loaded = true;
-        }
-        if (ar[0] === L) {
-          const api = function () { p(api, arguments); };
-          const namespace = ar[1];
-          api.q = api.q || [];
-          typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
-          return;
-        }
-        p(cal, ar);
-      };
-    })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", { origin: "https://cal.com" });
-  </script>
-
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
@@ -53,7 +16,7 @@
   <header class="navbar" id="navbar">
     <div class="container nav-container">
       <a href="#hero" class="nav-logo" aria-label="A\DAN SOLUT\ONS">
-        <img src="/assets/adan_solutions_logo.svg" alt="A\DAN SOLUT\ONS Logo" />
+        <img src="/assets/adan_solutions_logo.svg" alt="A\DAN SOLUT\ONS Logo" width="180" height="40" fetchpriority="high" />
       </a>
 
       <nav class="nav-links">
@@ -107,7 +70,7 @@
         Soluciones Diseñadas Para
         <br />
         <span class="hero-typewriter-container">
-          <span id="typewriter" class="text-gradient"></span><span class="cursor-blink">|</span>
+          <span id="typewriter" class="text-gradient">Vender Más</span><span class="cursor-blink">|</span>
         </span>
       </h1>
       <div class="hero-buttons">
@@ -137,7 +100,7 @@
       <div class="services-grid">
         <!-- Servicio 1 -->
         <div class="service-card">
-          <img src="/assets/web_&_app_development.webp" alt="Desarrollo Web & App" class="service-card-bg" />
+          <img src="/assets/web_&_app_development.webp" alt="Desarrollo Web & App" class="service-card-bg" loading="lazy" decoding="async" width="800" height="533" />
           <div class="service-card-overlay"></div>
           <div class="service-card-content">
             <div>
@@ -155,7 +118,7 @@
 
         <!-- Servicio 2 -->
         <div class="service-card">
-          <img src="/assets/rpa.webp" alt="Automatizaciones RPA" class="service-card-bg" />
+          <img src="/assets/rpa.webp" alt="Automatizaciones RPA" class="service-card-bg" loading="lazy" decoding="async" width="800" height="450" />
           <div class="service-card-overlay"></div>
           <div class="service-card-content">
             <div>
@@ -173,7 +136,7 @@
 
         <!-- Servicio 3 -->
         <div class="service-card">
-          <img src="/assets/chatbots.webp" alt="Chatbots & Asistentes Virtuales" class="service-card-bg" />
+          <img src="/assets/chatbots.webp" alt="Chatbots & Asistentes Virtuales" class="service-card-bg" loading="lazy" decoding="async" width="800" height="533" />
           <div class="service-card-overlay"></div>
           <div class="service-card-content">
             <div>
@@ -191,7 +154,7 @@
 
         <!-- Servicio 4 -->
         <div class="service-card">
-          <img src="/assets/ai_agents.webp" alt="Infraestructura & Agentes de IA" class="service-card-bg" />
+          <img src="/assets/ai_agents.webp" alt="Infraestructura & Agentes de IA" class="service-card-bg" loading="lazy" decoding="async" width="800" height="608" />
           <div class="service-card-overlay"></div>
           <div class="service-card-content">
             <div>
@@ -209,7 +172,7 @@
 
         <!-- Servicio 5 -->
         <div class="service-card">
-          <img src="/assets/business_intelligence.webp" alt="Business Intelligence & Data Analytics" class="service-card-bg" />
+          <img src="/assets/business_intelligence.webp" alt="Business Intelligence & Data Analytics" class="service-card-bg" loading="lazy" decoding="async" width="800" height="457" />
           <div class="service-card-overlay"></div>
           <div class="service-card-content">
             <div>
@@ -333,27 +296,27 @@
       <div class="logos-carousel-wrap">
         <div class="logos-track">
           <!-- Duplicated for continuous loop -->
-          <div class="logo-item"><img src="/assets/Logos Website-Win.png" alt="Win" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-UC.png" alt="Universidad Continental" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-SUNAT.png" alt="SUNAT" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-COPEINCA.png" alt="Copeinca" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-Compartamos.png" alt="Compartamos Banco" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-Tecnofarma.png" alt="Tecnofarma" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-SAT.png" alt="SAT" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-Banco Azteca.png" alt="Banco Azteca" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-UCMX.png" alt="UCMX" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-Win Empresas.png" alt="Win Empresas" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Win.png" alt="Win" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-UC.png" alt="Universidad Continental" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-SUNAT.png" alt="SUNAT" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-COPEINCA.png" alt="Copeinca" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Compartamos.png" alt="Compartamos Banco" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Tecnofarma.png" alt="Tecnofarma" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-SAT.png" alt="SAT" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Banco Azteca.png" alt="Banco Azteca" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-UCMX.png" alt="UCMX" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Win Empresas.png" alt="Win Empresas" loading="lazy" decoding="async" height="40" /></div>
           <!-- Loop duplicate -->
-          <div class="logo-item"><img src="/assets/Logos Website-Win.png" alt="Win" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-UC.png" alt="Universidad Continental" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-SUNAT.png" alt="SUNAT" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-COPEINCA.png" alt="Copeinca" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-Compartamos.png" alt="Compartamos Banco" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-Tecnofarma.png" alt="Tecnofarma" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-SAT.png" alt="SAT" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-Banco Azteca.png" alt="Banco Azteca" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-UCMX.png" alt="UCMX" /></div>
-          <div class="logo-item"><img src="/assets/Logos Website-Win Empresas.png" alt="Win Empresas" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Win.png" alt="Win" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-UC.png" alt="Universidad Continental" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-SUNAT.png" alt="SUNAT" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-COPEINCA.png" alt="Copeinca" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Compartamos.png" alt="Compartamos Banco" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Tecnofarma.png" alt="Tecnofarma" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-SAT.png" alt="SAT" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Banco Azteca.png" alt="Banco Azteca" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-UCMX.png" alt="UCMX" loading="lazy" decoding="async" height="40" /></div>
+          <div class="logo-item"><img src="/assets/Logos Website-Win Empresas.png" alt="Win Empresas" loading="lazy" decoding="async" height="40" /></div>
         </div>
       </div>
 
@@ -370,7 +333,7 @@
           <!-- Card 1 -->
           <div class="case-card" data-index="0">
             <div class="case-img-wrap">
-              <img src="/assets/uc_image.webp" alt="ENTEL" />
+              <img src="/assets/uc_image.webp" alt="ENTEL" loading="lazy" decoding="async" width="600" height="400" />
               <div class="case-img-overlay"></div>
               <div class="case-brand-tag">
                 <h4>ENTEL</h4>
@@ -397,7 +360,7 @@
           <!-- Card 2 -->
           <div class="case-card" data-index="1">
             <div class="case-img-wrap">
-              <img src="/assets/sunat_image.webp" alt="WIN" />
+              <img src="/assets/sunat_image.webp" alt="WIN" loading="lazy" decoding="async" width="600" height="400" />
               <div class="case-img-overlay"></div>
               <div class="case-brand-tag">
                 <h4>WIN</h4>
@@ -424,7 +387,7 @@
           <!-- Card 3 -->
           <div class="case-card" data-index="2">
             <div class="case-img-wrap">
-              <img src="/assets/copeinca_image.webp" alt="LPS PERÚ" />
+              <img src="/assets/copeinca_image.webp" alt="LPS PERÚ" loading="lazy" decoding="async" width="600" height="400" />
               <div class="case-img-overlay"></div>
               <div class="case-brand-tag">
                 <h4>LPS PERÚ</h4>
@@ -451,7 +414,7 @@
           <!-- Card 4 -->
           <div class="case-card" data-index="3">
             <div class="case-img-wrap">
-              <img src="/assets/win_image.webp" alt="Operadores de Conectividad & ISP" />
+              <img src="/assets/win_image.webp" alt="Operadores de Conectividad & ISP" loading="lazy" decoding="async" width="600" height="400" />
               <div class="case-img-overlay"></div>
               <div class="case-brand-tag">
                 <h4>Operadores & ISP</h4>
@@ -528,10 +491,10 @@
       <!-- Team Showcase Card -->
       <div class="team-showcase">
         <div class="team-avatar-group">
-          <img src="/assets/rafael.png" alt="Equipo A\DAN" class="team-avatar" title="Equipo A\DAN" />
-          <img src="/assets/juan.webp" alt="Consultor Técnico" class="team-avatar" title="Consultor Técnico" />
-          <img src="/assets/benigno.webp" alt="Arquitecto de Software" class="team-avatar" title="Arquitecto de Software" />
-          <img src="/assets/benny.webp" alt="Especialista en IA" class="team-avatar" title="Especialista en IA" />
+          <img src="/assets/rafael.webp" alt="Equipo A\DAN" class="team-avatar" title="Equipo A\DAN" width="56" height="56" loading="lazy" decoding="async" />
+          <img src="/assets/juan.webp" alt="Consultor Técnico" class="team-avatar" title="Consultor Técnico" width="56" height="56" loading="lazy" decoding="async" />
+          <img src="/assets/benigno.webp" alt="Arquitecto de Software" class="team-avatar" title="Arquitecto de Software" width="56" height="56" loading="lazy" decoding="async" />
+          <img src="/assets/benny.webp" alt="Especialista en IA" class="team-avatar" title="Especialista en IA" width="56" height="56" loading="lazy" decoding="async" />
         </div>
         <h3 class="team-heading">¿Listo Para Llevar Tu Operación Al Siguiente Nivel?</h3>
         <p class="team-desc">
@@ -624,10 +587,10 @@
   <section class="contact-section" id="contacto">
     <div class="container">
       <div class="contact-card-3d">
-        <!-- Interactive 3D Spline Earth Canvas -->
+        <!-- Interactive 3D Spline Earth Canvas (Lazy Loaded via IntersectionObserver) -->
         <div class="spline-embed-container">
           <iframe
-            src="https://my.spline.design/worldplanet-THcRYGslYxNkr3g7RdqRgH9h/"
+            data-src="https://my.spline.design/worldplanet-THcRYGslYxNkr3g7RdqRgH9h/"
             frameborder="0"
             title="Interactive 3D Planet"
             loading="lazy"
@@ -671,8 +634,9 @@
       </div>
       <div class="modal-body">
         <iframe
-          src="https://cal.com/danny-camavilca-aidan-solutions/diagnostico?embed=true&theme=dark"
+          data-src="https://cal.com/danny-camavilca-aidan-solutions/diagnostico?embed=true&theme=dark"
           title="Agendar Cita en Cal.com"
+          loading="lazy"
         ></iframe>
       </div>
     </div>
@@ -682,7 +646,7 @@
   <footer class="footer">
     <div class="container footer-content">
       <a href="#hero" class="nav-logo" aria-label="A\DAN SOLUT\ONS">
-        <img src="/assets/adan_solutions_logo.svg" alt="A\DAN SOLUT\ONS" style="height: 40px;" />
+        <img src="/assets/adan_solutions_logo.svg" alt="A\DAN SOLUT\ONS" style="height: 40px;" width="180" height="40" loading="lazy" decoding="async" />
       </a>
 
       <div class="footer-copyright">

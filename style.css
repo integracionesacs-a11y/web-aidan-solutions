@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/space-grotesk.woff2') format('woff2');
+}
 
 :root {
   --brand-dark-pink: #7D2E87;
@@ -253,6 +259,9 @@ body {
   z-index: 1;
   overflow: hidden;
   background-color: var(--bg-black);
+  background-image: 
+    radial-gradient(circle at 50% 35%, rgba(125, 46, 135, 0.25) 0%, rgba(232, 29, 120, 0.08) 40%, transparent 70%),
+    radial-gradient(circle at 80% 20%, rgba(254, 59, 65, 0.05) 0%, transparent 40%);
 }
 
 .hero-spline-wrapper spline-viewer {
@@ -260,6 +269,8 @@ body {
   height: 100vh;
   display: block;
   contain: strict;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .hero-overlay {

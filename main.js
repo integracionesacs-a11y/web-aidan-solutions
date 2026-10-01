@@ -1,10 +1,59 @@
-// Soluciones Digitales - Interactivity & Motion Logic
+// Soluciones Digitales - Interactivity & Motion Logic (Optimized for Instant Load)
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize Lucide Icons
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+import {
+  createIcons,
+  Calendar,
+  Menu,
+  ArrowRight,
+  Layout,
+  Cpu,
+  MessageSquare,
+  Sparkles,
+  BarChart3,
+  Box,
+  ShieldCheck,
+  Network,
+  Settings,
+  ChevronLeft,
+  ChevronRight,
+  Users,
+  Briefcase,
+  Award,
+  Star,
+  X,
+  Linkedin
+} from 'lucide';
+
+const APP_ICONS = {
+  Calendar,
+  Menu,
+  ArrowRight,
+  Layout,
+  Cpu,
+  MessageSquare,
+  Sparkles,
+  BarChart3,
+  Box,
+  ShieldCheck,
+  Network,
+  Settings,
+  ChevronLeft,
+  ChevronRight,
+  Users,
+  Briefcase,
+  Award,
+  Star,
+  X,
+  Linkedin
+};
+
+function renderIcons() {
+  createIcons({ icons: APP_ICONS });
+}
+
+function initApp() {
+  // 0. Render local SVG icons immediately
+  renderIcons();
 
   // 1. Typewriter Effect in Hero Section
   initTypewriter();
@@ -21,40 +70,92 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Dynamic Counter for Metrics
   initMetricsCounter();
 
-  // 6. Cal.com Booking Modal
+  // 6. Cal.com Booking Modal (On-demand Lazy Loading)
   initCalModal();
 
   // 7. Navbar Scroll Transition
   initNavbarScroll();
 
-  // 8. Spline Viewer Optimization
-  initSplineViewerClean();
-});
+  // 8. Spline Viewer Dynamic Local Loading
+  initSplineViewer();
+
+  // 9. Lazy Embeds (Contact 3D Scene)
+  initLazyEmbeds();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 
 /* -------------------------------------------------------------
- * Spline Viewer Cleanup
+ * Spline Viewer Dynamic Loading & Optimization
  * ------------------------------------------------------------- */
-function initSplineViewerClean() {
+function initSplineViewer() {
   const heroSpline = document.getElementById('heroSpline');
   if (!heroSpline) return;
 
+  import('@splinetool/viewer').then(() => {
+    initSplineViewerClean(heroSpline);
+  }).catch((err) => {
+    console.warn('Spline viewer deferred load notice:', err);
+  });
+}
+
+function initSplineViewerClean(heroSpline) {
   function removeLogo() {
     try {
-      if (heroSpline.shadowRoot) {
+      if (heroSpline && heroSpline.shadowRoot) {
         const logo = heroSpline.shadowRoot.querySelector('#logo');
         if (logo) logo.remove();
+        if (!heroSpline.shadowRoot.querySelector('#clean-spline-style')) {
+          const style = document.createElement('style');
+          style.id = 'clean-spline-style';
+          style.textContent = '#logo, a[href*="spline.design"] { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }';
+          heroSpline.shadowRoot.appendChild(style);
+        }
       }
     } catch (_) {}
   }
 
   heroSpline.addEventListener('load', removeLogo);
-  setTimeout(removeLogo, 1200);
-  setTimeout(removeLogo, 3000);
+  removeLogo();
+  setTimeout(removeLogo, 200);
+  setTimeout(removeLogo, 600);
+}
+
+/* -------------------------------------------------------------
+ * Lazy Embeds (Contact Spline Planet)
+ * ------------------------------------------------------------- */
+function initLazyEmbeds() {
+  const lazyEmbeds = document.querySelectorAll('iframe[data-src]:not(#calModal iframe)');
+  if (lazyEmbeds.length === 0) return;
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          if (el.dataset.src) {
+            el.src = el.dataset.src;
+          }
+          obs.unobserve(el);
+        }
+      });
+    }, { rootMargin: '300px 0px' });
+
+    lazyEmbeds.forEach(el => observer.observe(el));
+  } else {
+    lazyEmbeds.forEach(el => {
+      if (el.dataset.src) el.src = el.dataset.src;
+    });
+  }
 }
 
 /* -------------------------------------------------------------
  * 1. Typewriter Effect
- * Words: "Vender Más", "Ahorrar Tiempo", "Tener El Control"
+ * Pre-rendered first word for 0ms initial visual delay
  * ------------------------------------------------------------- */
 function initTypewriter() {
   const target = document.getElementById('typewriter');
@@ -62,11 +163,11 @@ function initTypewriter() {
 
   const words = ['Vender Más', 'Ahorrar Tiempo', 'Tener El Control'];
   let wordIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  const typeSpeed = 140;
-  const deleteSpeed = 90;
-  const pauseTime = 2200;
+  let charIndex = words[0].length;
+  let isDeleting = true;
+  const typeSpeed = 120;
+  const deleteSpeed = 75;
+  const pauseTime = 2400;
 
   function type() {
     const currentWord = words[wordIndex];
@@ -87,13 +188,14 @@ function initTypewriter() {
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       wordIndex = (wordIndex + 1) % words.length;
-      delay = 400;
+      delay = 350;
     }
 
     setTimeout(type, delay);
   }
 
-  type();
+  // First word is already displayed in HTML, pause before starting the deletion
+  setTimeout(type, pauseTime);
 }
 
 /* -------------------------------------------------------------
@@ -107,18 +209,18 @@ function initMobileDrawer() {
 
   toggle.addEventListener('click', () => {
     const isOpen = drawer.classList.toggle('open');
-    if (menuIcon && window.lucide) {
+    if (menuIcon) {
       menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
-      window.lucide.createIcons();
+      renderIcons();
     }
   });
 
   document.querySelectorAll('.mobile-link').forEach(link => {
     link.addEventListener('click', () => {
       drawer.classList.remove('open');
-      if (menuIcon && window.lucide) {
+      if (menuIcon) {
         menuIcon.setAttribute('data-lucide', 'menu');
-        window.lucide.createIcons();
+        renderIcons();
       }
     });
   });
@@ -327,7 +429,7 @@ function initMetricsCounter() {
 }
 
 /* -------------------------------------------------------------
- * 6. Cal.com Booking Modal
+ * 6. Cal.com Booking Modal (On-demand Lazy Loading)
  * ------------------------------------------------------------- */
 function initCalModal() {
   const modal = document.getElementById('calModal');
@@ -335,7 +437,12 @@ function initCalModal() {
   const openButtons = document.querySelectorAll('.open-cal-modal');
   if (!modal) return;
 
+  const iframe = modal.querySelector('iframe');
+
   function openModal() {
+    if (iframe && !iframe.src && iframe.dataset.src) {
+      iframe.src = iframe.dataset.src;
+    }
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
